@@ -97,7 +97,7 @@ export default function Writeblog() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className=" text-[#41554F] font-semibold text-[1.15vw]">
-                    Username
+                    Author
                   </FormLabel>
                   <FormControl>
                     <Input
