@@ -1,4 +1,5 @@
 "use client";
+
 import Nav from "../component/nav";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -18,6 +19,7 @@ import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import { clear } from "console";
 import { useBlogContext } from "@/lib/BlogContext";
+import { v4 } from "uuid";
 
 //IMPORTS
 
@@ -43,7 +45,7 @@ const FormSchema = z.object({
 //FUNCTION
 
 export default function Writeblog() {
-  var form = useForm<z.infer<typeof FormSchema>>({
+  const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       author: "",
@@ -51,13 +53,32 @@ export default function Writeblog() {
     },
   });
 
-  var { dataNow } = useBlogContext();
+  // let { dataNow } = useBlogContext();
 
   async function handleBlog(data: z.infer<typeof FormSchema>) {
-    console.log(data);
     await form.reset();
 
-    dataNow = data;
+    // Get Data from LocalStorage
+    const articles = localStorage.getItem("articles");
+
+    let currentArticles;
+
+    if (!articles) {
+      currentArticles = [];
+    } else {
+      currentArticles = JSON.parse(articles);
+    }
+
+    const dataWithId = {
+      id: v4(),
+      ...data,
+    };
+
+    // Add new article
+    const updatedArticles = [...currentArticles, dataWithId];
+
+    // Save new data
+    localStorage.setItem("articles", JSON.stringify(updatedArticles));
   }
 
   return (
@@ -89,6 +110,7 @@ export default function Writeblog() {
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="body"
@@ -108,6 +130,7 @@ export default function Writeblog() {
                 </FormItem>
               )}
             />
+
             <Button
               type="submit"
               className=" border-[0.2vw] border-[#A8A8A4] rounded-xl bg-[#41554F] text-[#E9E4D9] hover:text-[#41554F] font-semibold"

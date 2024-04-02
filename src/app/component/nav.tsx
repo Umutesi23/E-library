@@ -22,7 +22,7 @@ export default function Nav() {
             <Image
               src={book}
               alt="brand logo"
-              className=" w-[4vw] h-[7vh] fa-flip pb-[1.5vh]"
+              className=" w-[4vw] h-[4vw] fa-flip pb-[1.5vh]"
             />
             <h2 className=" text-[1.3vw] font-[cursive] font-black logo pt-[2vh] italic">
               Princess Pages
