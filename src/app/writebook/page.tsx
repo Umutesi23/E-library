@@ -84,7 +84,7 @@ export default function Writeblog() {
   return (
     <div className=" space-y-[5vh]">
       <Nav />
-      <div className=" p-[4vw] w-[80vw] h-fit min-h-[60vh] m-auto border-[#41554F] border-[1.3vw] rounded-xl">
+      <div className=" p-[4vw] w-[80vw] h-fit m-auto border-[#41554F] border-[1.3vw] rounded-xl">
         <Form {...form}>
           <form
             id="myform2"
@@ -96,7 +96,7 @@ export default function Writeblog() {
               name="author"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className=" text-[#41554F] font-semibold text-[1.15vw]">
+                  <FormLabel className=" text-[#41554F] font-semibold text-[1.3vw]">
                     Author
                   </FormLabel>
                   <FormControl>
@@ -116,14 +116,14 @@ export default function Writeblog() {
               name="body"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className=" text-[#41554F] font-semibold text-[1.15vw]">
+                  <FormLabel className=" text-[#41554F] font-semibold text-[1.3vw]">
                     Book
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Write here......."
                       {...field}
-                      className=" h-[40vh] border-[0.2vw] border-[#41554F] rounded-xl w-[50vw]"
+                      className=" h-[20vw] border-[0.2vw] border-[#41554F] rounded-xl w-[50vw]"
                     />
                   </FormControl>
                   <FormMessage />

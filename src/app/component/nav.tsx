@@ -22,9 +22,9 @@ export default function Nav() {
             <Image
               src={book}
               alt="brand logo"
-              className=" w-[4vw] h-[4vw] fa-flip pb-[1.5vh]"
+              className=" w-[4vw] h-[3vw] fa-flip mt-[0.4vh]"
             />
-            <h2 className=" text-[1.3vw] font-[cursive] font-black logo pt-[2vh] italic">
+            <h2 className=" text-[1.5vw] font-[cursive] font-black logo pt-[2vh] italic mt-[-0.5vh]">
               Princess Pages
             </h2>
           </div>
@@ -37,22 +37,22 @@ export default function Nav() {
 
       <div className=" flex justify-end w-[80%] h-[100%]">
         <Link href="/explore-genre">
-          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[1.5vw] text-[1.1vw]">
+          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Explore Genre
           </Button>
         </Link>
         <Link href="/blogposts">
-          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[1.5vw] text-[1.1vw]">
+          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Blog Posts
           </Button>
         </Link>
         <Link href="/writeblog">
-          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[1.5vw] text-[1.1vw]">
+          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Write Blog
           </Button>
         </Link>
         <Link href="/writebook">
-          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[1.5vw] text-[1.1vw]">
+          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Write Book
           </Button>
         </Link>

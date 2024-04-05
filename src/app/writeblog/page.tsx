@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Nav from "../component/nav";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -20,6 +21,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { clear } from "console";
 import { useBlogContext } from "@/lib/BlogContext";
 import { v4 } from "uuid";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
 //IMPORTS
 
@@ -45,6 +48,10 @@ const FormSchema = z.object({
 //FUNCTION
 
 export default function Writeblog() {
+  //store data prisma
+  const [cName, setName] = useState("");
+  const [cBody, setBody] = useState("");
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -53,43 +60,51 @@ export default function Writeblog() {
     },
   });
 
-  // let { dataNow } = useBlogContext();
-
   async function handleBlog(data: z.infer<typeof FormSchema>) {
     await form.reset();
+    setName(data.author);
+    setBody(data.body);
 
-    // Get Data from LocalStorage
-    const articles = localStorage.getItem("articles");
+    const blog = await prisma.author.create({
+      data: {
+        name: cName,
+        blogs: {
+          create: {
+            body: cBody,
+          },
+        },
+      },
+    });
+    // const articles = localStorage.getItem("articles");
 
-    let currentArticles;
+    // let currentArticles;
 
-    if (!articles) {
-      currentArticles = [];
-    } else {
-      currentArticles = JSON.parse(articles);
-    }
+    // if (!articles) {
+    //   currentArticles = [];
+    // } else {
+    //   currentArticles = JSON.parse(articles);
+    // }
 
-    const dataWithId = {
-      id: v4(),
-      ...data,
-    };
+    // const dataWithId = {
+    //   id: v4(),
+    //   ...data,
+    // };
 
-    // Add new article
-    const updatedArticles = [...currentArticles, dataWithId];
+    // // Add new article
+    // const updatedArticles = [...currentArticles, dataWithId];
 
-    // Save new data
-    localStorage.setItem("articles", JSON.stringify(updatedArticles));
+    // localStorage.setItem("articles", JSON.stringify(updatedArticles));
   }
 
   return (
     <div className=" space-y-[10vh]">
       <Nav />
-      <div className=" p-[4vw] w-[50vw] h-fit min-h-[60vh] m-auto border-[#41554F] border-[1.3vw] rounded-xl">
+      <div className=" p-[4vw] w-[50vw] h-fit m-auto border-[#41554F] border-[1.3vw] rounded-xl">
         <Form {...form}>
           <form
             id="myform"
             onSubmit={form.handleSubmit(handleBlog)}
-            className="w-2/3 space-y-6 m-auto"
+            className="w-2/3 space-y-6 m-auto h-[23vw]"
           >
             <FormField
               control={form.control}
@@ -123,7 +138,7 @@ export default function Writeblog() {
                     <Textarea
                       placeholder="Write here......."
                       {...field}
-                      className=" h-[20vh] border-[0.2vw] border-[#41554F] rounded-xl"
+                      className=" border-[0.2vw] border-[#41554F] rounded-xl h-[10vw]"
                     />
                   </FormControl>
                   <FormMessage />

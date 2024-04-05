@@ -11,18 +11,18 @@ import { useState, useEffect } from "react";
 import hide from "./images/hide.png";
 
 export default function Home() {
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
   const [welcomeM, setWelcome] = useState(true);
 
-  useEffect(() => {
-    setIsMounted(true);
+  // useEffect(() => {
+  //   setIsMounted(true);
 
-    const data = window.localStorage.getItem("WELCOME_MESSAGE");
+  //   const data = window.localStorage.getItem("WELCOME_MESSAGE");
 
-    if (data !== null) {
-      setWelcome(JSON.parse(String(data)));
-    }
-  }, []);
+  //   if (data !== null) {
+  //     setWelcome(JSON.parse(String(data)));
+  //   }
+  // }, []);
 
   // useEffect(() => {
   //   window.localStorage.setItem("WELCOME_MESSAGE", JSON.stringify(welcomeM));
@@ -31,10 +31,10 @@ export default function Home() {
   const buttonClickHandler = () => {
     setWelcome(false);
 
-    window.localStorage.setItem("WELCOME_MESSAGE", JSON.stringify(false));
+    // window.localStorage.setItem("WELCOME_MESSAGE", JSON.stringify(false));
   };
 
-  if (!isMounted) return null;
+  // if (!isMounted) return null;
 
   return (
     <main className="">
@@ -50,34 +50,32 @@ export default function Home() {
       }
 
       <div className=" w-[100vw] h-[40vh] bg bg-repeat-x block justify-center">
-        {(welcomeM && (
+        <div className=" flex justify-center">
+          {/* {(welcomeM && ( */}
           <h1 className=" text-[2.5vw] text-[#E9E4D9] text-center pt-[3vh] gap-[0.2vw] font-bold drop-shadow-lg flex justify-center">
             Welcome To Our E-library!
             <Button
-              className="hover:bg-[#E9E4D9] h-[5vh] w-[4vw] mt-[1vh] flex justify-center rounded-xl"
+              className="hover:bg-[#E9E4D9] mt-[0.5vh] w-[4vw] flex justify-center rounded-xl"
               onClick={buttonClickHandler}
             >
-              <Image
-                src={hide}
-                alt="hide"
-                className=" h-[4vh] w-[2vw]  mt-[0.3vh]"
-              />
+              <Image src={hide} alt="hide" className=" h-[2.5vw] w-[2vw]" />
             </Button>
           </h1>
-        )) || (
+          {/* )) || (
           <h1 className=" text-[2.5vw] text-[#E9E4D9] text-center pt-[3vh] gap-[0.2vw] font-bold drop-shadow-lg flex justify-center">
             Welcome Back!
           </h1>
-        )}
-        <div className="ml-[35vw] mt-[18vh] flex gap-[6vw]">
+        )} */}
+        </div>
+        <div className="ml-[35vw] mt-[18vh] flex gap-[5vw]">
           <Link href="/explore-genre">
-            <Button className="w-[12vw] h-[8vh] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.2vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
+            <Button className="w-[14vw] h-[5vw] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.3vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
               Start Reading
             </Button>
           </Link>
 
           <Link href="/writebook">
-            <Button className="w-[12vw] h-[8vh] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.2vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
+            <Button className="w-[14vw] h-[5vw] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.3vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
               Start Writing
             </Button>
           </Link>

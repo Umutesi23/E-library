@@ -25,7 +25,7 @@ export default function Explore() {
             <Image
               src={horror}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Horror
@@ -36,7 +36,7 @@ export default function Explore() {
             <Image
               src={thriller}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Thriller
@@ -47,7 +47,7 @@ export default function Explore() {
             <Image
               src={romance}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Romance
@@ -58,7 +58,7 @@ export default function Explore() {
             <Image
               src={fantasy}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Fantasy
@@ -75,7 +75,7 @@ export default function Explore() {
             <Image
               src={history}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               History
@@ -86,7 +86,7 @@ export default function Explore() {
             <Image
               src={humor}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Humor
@@ -97,7 +97,7 @@ export default function Explore() {
             <Image
               src={kids}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Kids
@@ -108,7 +108,7 @@ export default function Explore() {
             <Image
               src={memoir}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Memoir
@@ -125,7 +125,7 @@ export default function Explore() {
             <Image
               src={poetry}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Poetry
@@ -136,7 +136,7 @@ export default function Explore() {
             <Image
               src={scifi}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Sci-Fi
@@ -147,7 +147,7 @@ export default function Explore() {
             <Image
               src={selfhelp}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[30%] text-white">
               Self-Help
@@ -158,7 +158,7 @@ export default function Explore() {
             <Image
               src={truecrime}
               alt=" genre"
-              className="w-[20vw] h-[45vh] cate hover:w-[21vw] hover:h-[46vh]"
+              className="w-[20vw] h-[25vw] cate hover:w-[21vw] hover:h-[26vw]"
             />
             <h2 className=" text-[2.5vw] mt-[-60%] ml-[15%] text-white">
               True Crime
