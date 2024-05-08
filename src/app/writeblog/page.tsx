@@ -28,14 +28,14 @@ const prisma = new PrismaClient();
 
 //Z
 
-const FormSchema = z.object({
+const formSchema = z.object({
   author: z
     .string()
     .min(2, {
       message: "Name must be at least 2 characters.",
     })
-    .max(15, { message: "Name must not be more than 15 characters" }),
-  body: z
+    .max(20, { message: "Name must not be more than 15 characters" }),
+  writing: z
     .string()
     .min(100, {
       message: "Your blog post must be at least 100 characters.",
@@ -48,54 +48,25 @@ const FormSchema = z.object({
 //FUNCTION
 
 export default function Writeblog() {
-  //store data prisma
-  const [cName, setName] = useState("");
-  const [cBody, setBody] = useState("");
-
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       author: "",
-      body: "",
+      writing: "",
     },
   });
 
-  async function handleBlog(data: z.infer<typeof FormSchema>) {
-    await form.reset();
-    setName(data.author);
-    setBody(data.body);
-
-    const blog = await prisma.author.create({
-      data: {
-        name: cName,
-        blogs: {
-          create: {
-            body: cBody,
-          },
-        },
-      },
+  async function handleBlog(data: z.infer<typeof formSchema>) {
+    const response = await fetch("/api/blog", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.author,
+        blogPost: data.writing,
+      }),
     });
-    // const articles = localStorage.getItem("articles");
-
-    // let currentArticles;
-
-    // if (!articles) {
-    //   currentArticles = [];
-    // } else {
-    //   currentArticles = JSON.parse(articles);
-    // }
-
-    // const dataWithId = {
-    //   id: v4(),
-    //   ...data,
-    // };
-
-    // // Add new article
-    // const updatedArticles = [...currentArticles, dataWithId];
-
-    // localStorage.setItem("articles", JSON.stringify(updatedArticles));
+    form.reset();
   }
-
   return (
     <div className=" space-y-[10vh]">
       <Nav />
@@ -128,7 +99,7 @@ export default function Writeblog() {
 
             <FormField
               control={form.control}
-              name="body"
+              name="writing"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className=" text-[#41554F] font-semibold text-[1.15vw]">

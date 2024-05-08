@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Nav from "./component/nav";
 import bg from "./images/bg.jpg";
@@ -6,7 +7,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Explore from "./explore-genre/page";
+// import Explore from "./explore-genre/page";
 import { useState, useEffect } from "react";
 import hide from "./images/hide.png";
 
@@ -68,13 +69,13 @@ export default function Home() {
         )} */}
         </div>
         <div className="ml-[35vw] mt-[18vh] flex gap-[5vw]">
-          <Link href="/explore-genre">
+          <Link href="/blogposts">
             <Button className="w-[14vw] h-[5vw] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.3vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
               Start Reading
             </Button>
           </Link>
 
-          <Link href="/writebook">
+          <Link href="/writeblog">
             <Button className="w-[14vw] h-[5vw] bg-[#E9E4D9] rounded-xl shadow-2xl  font-bold text-[#41554F] text-[1.3vw] hover:bg-[#41554F] hover:text-[#E9E4D9]">
               Start Writing
             </Button>

@@ -36,11 +36,11 @@ export default function Nav() {
       }
 
       <div className=" flex justify-end w-[80%] h-[100%]">
-        <Link href="/explore-genre">
+        {/* <Link href="/explore-genre">
           <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Explore Genre
           </Button>
-        </Link>
+        </Link> */}
         <Link href="/blogposts">
           <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
             Blog Posts
@@ -51,11 +51,7 @@ export default function Nav() {
             Write Blog
           </Button>
         </Link>
-        <Link href="/writebook">
-          <Button className=" hover:bg-[#41554F] hover:text-[#E9E4D9] rounded-xl p-[2vw] text-[1.2vw]">
-            Write Book
-          </Button>
-        </Link>
+        <Link href="/writebook"></Link>
       </div>
     </div>
   );

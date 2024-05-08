@@ -1,47 +1,26 @@
-"use client";
+import result from "postcss/lib/result";
+import React from "react";
+import BlogPosts from "./BlogsWidget";
 
-import { useBlogContext } from "@/lib/BlogContext";
-import Nav from "../component/nav";
-import { useState, useEffect } from "react";
+export const BlogPage = async () => {
+  const getBlogs = async () => {
+    const response = await fetch(process.env.APPURL + `/api/getBlogs`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
 
-interface BlogType {
-  id: string;
-  author: string;
-  body: string;
-}
+    const result = await response.json();
 
-export default function BlogPosts() {
-  const [articless, setArticles] = useState<BlogType[]>([]);
+    return result;
+  };
 
-  // useEffect(() => {
-  //   // Get Data from LocalStorage
-  //   const articles = localStorage.getItem("articles");
-
-  //   let currentArticles;
-
-  //   if (!articles) {
-  //     currentArticles = [];
-  //   } else {
-  //     currentArticles = JSON.parse(articles);
-  //   }
-  //   setArticles(currentArticles.reverse());
-  // }, []);
+  const blogs = await getBlogs();
 
   return (
     <div>
-      <Nav />
-      <h1 className="text-[5vw]">{}</h1>
-      <div className=" p-[4vw]">
-        {/* {articless.map((articless) => (
-          <div
-            key={}
-            className=" h-[45vh] w-[20vw] bg-[#E9E4D9] p-[1.2vw] rounded-xl shadow-md text-center "
-          >
-            <h2 className=" font-bold capitalize"></h2>
-            {}
-          </div>
-        ))}*/}
-      </div>
+      <BlogPosts blogs={blogs} />
     </div>
   );
-}
+};
+
+export default BlogPage;
