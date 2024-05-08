@@ -1,9 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import book from "../images/book.png";
 import { Button } from "@/components/ui/button";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import { useState } from "react";
 import Link from "next/link";
 
 {
