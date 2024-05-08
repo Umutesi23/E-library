@@ -1,5 +1,3 @@
-import result from "postcss/lib/result";
-import React from "react";
 import BlogPosts from "./BlogsWidget";
 import { getBlogs } from "../services/functions";
 import Nav from "../component/nav";
