@@ -4,7 +4,8 @@ export const getBlogs = async () => {
     headers: { "Content-Type": "application/json" },
   });
 
-  const result = await response.json();
+  const result1 = await response.text();
+  const result = JSON.parse(result1);
 
   return result;
 };
