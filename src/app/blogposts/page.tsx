@@ -2,7 +2,7 @@ import result from "postcss/lib/result";
 import React from "react";
 import BlogPosts from "./BlogsWidget";
 
-export const BlogPage = async () => {
+export default async function BlogPage() {
   const getBlogs = async () => {
     const response = await fetch(process.env.APPURL + `/api/getBlogs`, {
       method: "POST",
@@ -21,6 +21,4 @@ export const BlogPage = async () => {
       <BlogPosts blogs={blogs} />
     </div>
   );
-};
-
-export default BlogPage;
+}
