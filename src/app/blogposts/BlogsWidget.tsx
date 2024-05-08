@@ -1,9 +1,5 @@
 "use client";
-import { log } from "console";
-import Nav from "../component/nav";
 import { Blog } from "@prisma/client";
-import { Bold } from "lucide-react";
-import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -27,8 +23,6 @@ interface BlogsProp {
 export default function BlogPosts({ blogs }: BlogsProp) {
   return (
     <div className=" h-[100vh]">
-      <Nav />
-
       <div className=" grid p-[2vw] grid-cols-3 gap-[5vw] h-[90vh] text-center">
         {blogs.map((b) => (
           <div

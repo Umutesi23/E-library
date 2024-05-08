@@ -1,24 +1,18 @@
 import result from "postcss/lib/result";
 import React from "react";
 import BlogPosts from "./BlogsWidget";
-
-export default async function BlogPage() {
-  const getBlogs = async () => {
-    const response = await fetch(process.env.APPURL + `/api/getBlogs`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    const result = await response.json();
-
-    return result;
-  };
-
+import { getBlogs } from "../services/functions";
+import Nav from "../component/nav";
+const BlogPage = async () => {
   const blogs = await getBlogs();
 
   return (
     <div>
+      <Nav />
+
       <BlogPosts blogs={blogs} />
     </div>
   );
-}
+};
+
+export default BlogPage;
