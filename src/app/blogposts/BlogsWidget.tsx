@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
+import Nav from "../component/nav";
 //IMPORTS
 
 //EXPORT FUNCTION
@@ -22,17 +22,21 @@ interface BlogsProp {
 export default function BlogPosts({ blogs }: BlogsProp) {
   return (
     <div className=" h-[100vh]">
+      <Nav />
+
       <div className=" grid p-[2vw] grid-cols-3 gap-[5vw] h-[90vh] text-center">
         {blogs.map((b) => (
           <div
             key={b.id}
-            className=" shadow-lg bg-[#E9E4D9] p-[1.3vw] h-[30%] overflow-hidden rounded-xl hover:bg-[#41554F] hover:text-[white]"
+            className=" shadow-lg bg-[#E9E4D9] p-[1.3vw] h-[30%]  rounded-xl cate"
           >
             <div className=" space-x-[3vw]">
               <strong>{b.name}</strong>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button variant="outline">Show More</Button>
+                  <Button variant="outline" className=" show">
+                    Show More
+                  </Button>
                 </DialogTrigger>
                 <DialogContent className=" bg-[#E9E4D9] p-[2vw]">
                   <DialogHeader>
@@ -52,7 +56,7 @@ export default function BlogPosts({ blogs }: BlogsProp) {
               </Dialog>
             </div>
             <br></br>
-            {b.blogPost}
+            <div className="overflow-hidden  h-[50%]">{b.blogPost}</div> ...
           </div>
         ))}
       </div>

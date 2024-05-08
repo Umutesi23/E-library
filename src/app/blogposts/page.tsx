@@ -8,8 +8,6 @@ const BlogPage = async () => {
 
   return (
     <div>
-      <Nav />
-
       <BlogPosts blogs={blogs} />
     </div>
   );

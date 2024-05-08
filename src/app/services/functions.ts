@@ -5,6 +5,7 @@ export const getBlogs = async () => {
   });
 
   const result1 = await response.text();
+
   const result = JSON.parse(result1);
 
   return result;
