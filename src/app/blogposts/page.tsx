@@ -8,6 +8,7 @@ const BlogPage = async () => {
 
   return (
     <div>
+      {/* kjkhkh */}
       <BlogPosts blogs={blogs} />
     </div>
   );
